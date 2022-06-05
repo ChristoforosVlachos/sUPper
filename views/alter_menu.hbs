@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Επεξεργασία Σελίδας</title>
+        <link rel="stylesheet" href="css/res_page_style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row top-bar mb-5" id="bar">
+                <div class="col-auto">
+                    <a href="/"><img class="logo" src="img/logo.png" alt="logo"></a>
+                </div>
+                <div class="col"></div>
+                <div class="col-auto">
+                    <input type="button" class="signout" value="Αποσύνδεση" onclick="window.location='/signout'">
+                </div>
+            </div>
+            <div class="main row d-flex justify-content-evenly align-items-end flex-nowrap">
+                <h2 class="flex-shrink-1 ps-0 col-auto">{{info.rname}}</h2>
+                {{#if info.avg_rating}}
+                <div id="rating" class="col-1"> 
+                    <span id="ratingstar">&#9733</span>
+                    <span id="ratingNo">{{info.avg_rating}}</span> 
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="container mt-0 pt-4">
+            <div id="stbar" class="row ms-1">
+                <div class="search col-6 mb-3 pt-2">
+                    <h4 class="fw-bold text-start">ΜΕΝΟΥ</h4>
+                </div>
+            </div>
+            <div class="row ms-1">
+                <div class="menu-items col-6 mb-3">
+                    {{!-- ΜΕΝΟΥ --}}
+                    <div>
+                        <p id="menuId" style="display: none;">{{menu_id}}</p>
+                        {{#each products}}
+                        <button id="item-{{this.product_id}}" class="item">
+                            <p class="itemname">{{this.name}}</p>
+                            <p class="itemdescr">{{this.ingredients}}</p>
+                            <p class="itemprice">{{this.price}}€</p>
+                            <p class="itemlong" style="display: none;">{{this.description}}</p>
+                            <p class="itemmid" style="display: none;">{{this.menu_id}}</p>
+                            <p class="itempid" style="display: none;">{{this.product_id}}</p>
+                        </button>
+                        {{/each}}
+                    </div>
+                    {{!-- MODAL --}}
+                    <div id="myModal" class="modal">
+                        <div class="modal-cont">
+                            <div class="modal-header pb-0 pt-0">
+                                <div>
+                                    <h5 class="foodName fw-bold mb-0"></h5>
+                                    <p class="foodIngr"></p>
+                                    <h5 class="foodPrice fw-bold"></h5>
+                                </div>
+                                <span id="closebt" type="button" class="btn disable-select">&times</span>
+                            </div>
+                            <div class="modal-body">
+                                    <p></p>
+                                    <p id="mid" style="display: none;"></p>
+                                    <p id="pid" style="display: none;"></p>
+                                </div>
+                            <div class="modal-footer justify-content-between">
+                                <span type="button" id="deletebtn" class="modalbtn btn me-3">Αφαίρεση</span>
+                                <span type="button" id="savebtn" class="modalbtn btn me-3">Αποθήκευση</span>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="res_info ps-2 pe-2">
+                        <h4>Ωράριο Λειτουργίας</h4>
+                        <p contenteditable="true" id="openOn">{{{info.open_on}}}</p>
+                    </div>
+                </div>
+                <div class="col-4 d-flex flex-column align-items-center">
+                    <div id="resCat">
+                        <button id="storeCat" class="btn dropdown-toggle"  data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Κατηγορία Μαγαζιού</button>
+                        <ul class="dropdown-menu" aria-labelledby="storeCat" >
+                            <li><a class="dropdown-item" id="cat-1">Καφέδες</a></li>
+                            <li><a class="dropdown-item" id="cat-2">Σουβλάκια</a></li>
+                            <li><a class="dropdown-item" id="cat-3">Pizza</a></li>
+                            <li><a class="dropdown-item" id="cat-4">Κινέζικη</a></li>
+                            <li><a class="dropdown-item" id="cat-5">Κρέπες</a></li>
+                            <li><a class="dropdown-item" id="cat-6">Burgers</a></li>
+                            <li><a class="dropdown-item" id="cat-7">Shushi</a></li>
+                            <li><a class="dropdown-item" id="cat-8">Γλυκά</a></li>
+                            <li><a class="dropdown-item" id="cat-9">Μαγειρευτά</a></li>
+                            <li><a class="dropdown-item" id="cat-10">Ζυμαρικά</a></li>
+                            <li><a class="dropdown-item" id="cat-11">Μεξικάνικη</a></li>
+                            <li><a class="dropdown-item" id="cat-12">Νηστίσιμα</a></li>
+                            <li><a class="dropdown-item" id="cat-13">Βάφλες</a></li>
+                            <li><a class="dropdown-item" id="cat-14">Vegetarian</a></li>
+                            <li><a class="dropdown-item" id="cat-15">Ασιάτικη</a></li>
+                            <li><a class="dropdown-item" id="cat-16">Σφολιάτες</a></li>
+                            <li><a class="dropdown-item" id="cat-17">Θαλασσινά</a></li>
+                            <li><a class="dropdown-item" id="cat-18">Σαλάτες</a></li>
+                            <li><a class="dropdown-item" id="cat-19">Κουλούρια</a></li>
+                            <li><a class="dropdown-item" id="cat-20">Ζαχαροπλαστείο</a></li>
+                            <li><a class="dropdown-item" id="cat-21">Cocktails</a></li>
+                            <li><a class="dropdown-item" id="cat-22">Ιταλική</a></li>
+                            <li><a class="dropdown-item" id="cat-23">Παγωτό</a></li>
+                            <li><a class="dropdown-item" id="cat-24">Ελληνική</a></li>
+                            <li><a class="dropdown-item" id="cat-25">Μεσογειακή</a></li>
+                            <li><a class="dropdown-item" id="cat-26">Φρέσκοι Χυμοί</a></li>
+                            <li><a class="dropdown-item" id="cat-27">Snacks</a></li>
+                            <li><a class="dropdown-item" id="cat-28">Sandwich</a></li>
+                            <li><a class="dropdown-item" id="cat-29">Αρτοποιήματα</a></li>
+                            <li><a class="dropdown-item" id="cat-30">Ψητά-Grill</a></li>
+                        </ul>
+                    </div>
+                    <div id="addItem" class="d-flex flex-column align-items-center justify-content-start pt-2 pb-2 ps-2 pe-2 mt-3">
+                        <p>Όνομα προσθήκης</p>
+                        <input id="addName" type="text" class="form-control">
+                        <p>Υλικά προσθήκης</p>
+                        <input id="addIngredients" type="text" class="form-control">
+                        <p>Τιμή προσθήκης</p>
+                        <input id="addPrice" type="number" min="0" class="form-control mb-2">
+                        <p>Περιγραφή προσθήκης</p>
+                        <input id="addDescription" type="text" class="form-control">
+                        <button id="addItembtn">Προσθήκη στο Μενού</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        {{!-- <script src="js/menu.js"></script> --}}
+        <script src="js/alter_menu_modal.js"></script>
+        {{!-- <script src="js/create_menu.js"></script> --}}
+        <script src="js/alter_menu.js"></script>
+    </body>
+</html>

@@ -1,0 +1,133 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+img.logo {
+    height: 70px;
+    margin: 10px;
+}
+#bar{
+    background-color: #ec5707;
+}
+/* ΦΟΡΜΑ */
+form{
+    margin-left: 25%;
+    width: 50%;
+    padding: 2% 5% 2% 5%;
+    background-color: white; 
+    border-radius: 15px;
+    border: 0.01em solid #ec5707;
+}
+#message{
+    border-bottom: solid #ec5707;
+}
+.inftitle{
+    color: gray;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.form-control{
+    margin-bottom: 5%;
+}
+input[type=text]:hover, input[type=password]:hover,input[type=email]:hover{
+    border: 1px solid grey;
+    box-shadow:0 0 12px 4px rgba(0,0,0,0.2);
+}
+/* SUBMIT BUTTON */
+.button{
+    font-size: 0.9em;
+    margin-left: 25%;
+    padding: 0.3em;
+    border: none;
+    border-radius: 15px;
+}
+.button:hover{
+    cursor: pointer;
+    background-color: #ec5707;
+    color: white;
+}
+
+/* .container {
+    background-color: #eee;
+}
+
+div[class^="col"] {
+    border: 1px solid #aaa;
+} */
+
+.progress {
+    padding: 0 !important;
+}
+
+.three-columns > .col {
+    border: 2px solid black;
+    height: calc(100vh - 90px - 3rem - 34.5667px  - 33.1167px - 2rem);
+    margin: 0 5px;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ec5707 #e0e0e0;
+    user-select: none;
+}
+
+div[id^="drag"] {
+    width: 100%;
+    background-color: greenyellow;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.three-columns-head {
+    font-size: 1.15rem;
+}
+
+.three-columns-head span {
+    font-weight: bold;
+}
+
+.open {
+    color: green;
+    margin-right: 5px;
+    font-size: 1.2rem;
+}
+.closed {
+    color: red;
+    margin-right: 5px;
+    font-size: 1.2rem;
+}
+
+#restaurant-status {
+    cursor: pointer;
+    user-select: none;
+}
+
+div[id^="drag"].transit {
+    background-color: brown;
+    cursor: default;
+}
+
+#editInfo{
+    background-color: #d7d3d3;
+    color: #ec5707;
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+}
+#editInfo:hover{
+    background-color: #ec5707;
+    color: white;
+}
+
+.signout{
+    margin: 20px 10px;
+    background-color: white;
+    border-width: 0;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+.signout:hover {
+    background-color: #6B7D7D;
+    color: white;
+}

@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>sUPper</title>
+        <link rel="stylesheet" href="css/index_restaurant.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container-lg">
+
+            <!-- topbar start -->
+            <div class="row mb-5" id="bar">
+                <div class="col-auto">
+                    <a href="/"><img class="logo" src="img/logo.png" alt="logo"></a>
+                </div>
+                <div class="col"></div>
+                <div class="col-auto">
+                    <input type="button" class="signout" value="Αποσύνδεση" onclick="window.location='/signout'">
+                </div>
+            </div>
+            <!-- topbar end -->
+
+            <div class="row">
+                <div class="col-auto">
+                    <button type="button" id="editInfo" onclick="window.location = '/edit-info'">Επεξεργασία</button>
+                </div>
+                <div class="col"></div>
+                <div class="col-auto" id="restaurant-status"><span class="open">●</span>Εστιατόριο ανοιχτό</div>
+            </div>
+
+            <div class="row align-items-center three-columns-head">
+                <div class="col">Εισερχόμενες <span id="incoming-count"></span></div>
+                <div class="col">Εξερχόμενες <span id="outgoing-count"></span></div>
+                <div class="col">Έτοιμες <span id="ready-count"></span></div>
+            </div>
+            <div class="row align-items-center three-columns">
+                <div class="col" ondrop="drop(event)" ondragover="allowDrop(event)" id="incoming">
+                    {{#each orders}}
+                    {{#if this.incoming}}
+                    <div id="drag{{this.order_id}}" draggable="true" ondragstart="drag(event)">
+                        <h4>Παραγγελία #{{this.order_id}}</h4>
+                        {{#each this.food}}
+                        <br>{{this.quantity}} x {{this.name}}
+                        {{/each}}
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                </div>
+                <div class="col" ondrop="drop(event)" ondragover="allowDrop(event)" id="outgoing">
+                    {{#each orders}}
+                    {{#if this.outgoing}}
+                    <div id="drag{{this.order_id}}" draggable="true" ondragstart="drag(event)">
+                        <h4>Παραγγελία #{{this.order_id}}</h4>
+                        {{#each this.food}}
+                        <br>{{this.quantity}} x {{this.name}}
+                        {{/each}}
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                </div>
+                <div class="col" ondrop="drop(event)" ondragover="allowDrop(event)" id="ready">
+                    {{#each orders}}
+                    {{#if this.ready}}
+                    <div id="drag{{this.order_id}}" draggable="true" ondragstart="drag(event)">
+                        <h4>Παραγγελία #{{this.order_id}}</h4>
+                        {{#each this.food}}
+                        <br>{{this.quantity}} x {{this.name}}
+                        {{/each}}
+                    </div>
+                    {{/if}}
+                    {{/each}}
+
+                    {{#each orders}}
+                    {{#if this.transit}}
+                    <div id="drag{{this.order_id}}" class="transit">
+                        <h4>Παραγγελία #{{this.order_id}}</h4>
+                        {{#each this.food}}
+                        <br>{{this.quantity}} x {{this.name}}
+                        {{/each}}
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <script src="js/index_restaurant.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+img.logo {
+    height: 70px;
+    margin: 10px;
+}
+#bar{
+    background-color: #ec5707;
+}
+.login, .signup{
+    border-radius: 4px;
+    background-color: white;
+    border: 0.1em solid #ec5707;
+    height: fit-content;
+}
+.fillin{
+    padding: 5%;
+    text-align: center;
+} 
+.fillin label{
+    margin: 0.8em;
+    display: block;
+}
+form{
+    align-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+input[type=text],input[type=email],input[type=password]{
+    width: 100%;
+    height: 3em;
+    padding: 1em;
+    font-size: 0.8em;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    box-shadow:0 0 12px 4px rgba(0,0,0,0.1);
+}
+input[type=text]:hover, input[type=password]:hover,input[type=email]:hover{
+    border: 1px solid grey;
+    box-shadow:0 0 12px 4px rgba(0,0,0,0.2);
+}
+i:hover{
+    cursor: pointer;
+}
+.button{
+    font-size: 0.9em;
+    width: 72%;
+    margin: 5% 0% 5% 0;
+    padding: 0.5em;
+    border: none;
+    border-radius: 15px;
+}
+.button:hover{
+    cursor: pointer;
+    background-color: #ec5707;
+    color: white;
+}

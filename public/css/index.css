@@ -1,0 +1,93 @@
+/* .container-fluid {
+    background-color: #eee;
+}
+
+div[class^="col"] {
+    border: 1px solid #aaa;
+} */
+
+img.logo {
+    height: 200px;
+    margin: 10px;
+}
+
+body {
+    background-color: #ec5707;
+}
+
+.login {
+    margin: 20px 10px;
+    background-color: white;
+    border-width: 0;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.login:hover {
+    background-color: #6B7D7D;
+    color: white;
+}
+
+.address {
+    width: 500px;
+}
+
+.login-text a {
+    color: white;
+    text-decoration: none;
+}
+
+p {
+    margin-top: 1rem;
+}
+
+input.address {
+    border-radius: 10px;
+    padding: 10px;
+    border-width: 0;
+}
+
+input.submit {
+    background-color: white;
+    border-width: 0;
+    border-radius: 10px;
+    margin: 0 5px;
+    padding: 0 20px;
+}
+
+input.submit:hover {
+    background-color: #6B7D7D;
+    color: white;
+    
+}
+
+.partner {
+    color: black;
+    font-size: 30px;
+    text-shadow: #6B7D7D 2px 2px 5px;
+}
+
+.partner-options {
+    color: white;
+    font-size: 20px;
+}
+
+.partner-restaurant:hover, .partner-driver:hover {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+}
+
+.signout{
+    margin: 20px 10px;
+    background-color: white;
+    border-width: 0;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+.signout:hover {
+    background-color: #6B7D7D;
+    color: white;
+}

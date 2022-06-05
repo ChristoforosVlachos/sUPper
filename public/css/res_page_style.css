@@ -1,0 +1,376 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+img.logo {
+    height: 70px;
+    margin: 10px;
+}
+#bar{
+    background-color: #ec5707;
+}
+.login {
+    margin: 20px 10px;
+    background-color: white;
+    border-width: 0;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+.login:hover {
+    background-color: #6B7D7D;
+    color: white;
+}
+
+/* ΠΛΗΡΟΦΟΡΙΕΣ */
+.main{
+    font-size: 1.2em;
+}
+.main h2{
+    word-wrap: break-word;
+}
+#resLogo{
+    cursor: pointer;
+}
+
+@media screen and (min-width: 0) {
+    
+    img[alt=restaurant_logo]{
+        max-width: 60px;
+        max-height: 60px;
+    }
+    #ratingstar, #ratingNo, #tabs li a {
+        font-size: 0.9em;
+    }
+}
+@media screen and (min-width: 600px) {
+    .main h2 {
+        font-size: 1.7em;
+    }
+    img[alt=restaurant_logo]{
+        max-width: 120px;
+        max-height: 120px;
+    }
+    #ratingstar, #ratingNo, #tabs li a {
+        font-size: 0.9em;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .main h2 {
+        font-size: 3em;
+    }
+    img[alt=restaurant_logo]{
+        max-width: 120px;
+        max-height: 120px;
+    }
+    #ratingstar, #ratingNo, #tabs li a {
+        font-size: 1em;
+    }
+}
+
+#rating{
+    border: 0.1em solid #ec5707;
+    border-bottom: 0;
+    text-align: center;
+    padding: 7px 0 7px 0;
+}
+#ratingstar{
+    color: yellow;
+    font-size: 1.6em;
+}
+
+/* ΑΝΑΖΗΤΗΣΗ */
+.container{
+    border-top: 0.1em solid #ec5707;
+}
+#changeLogo{
+    width: 200px;
+    margin-left: 5%;
+}
+#stbar{
+    background-color: white;
+    position: sticky; 
+    top: 0px;
+}
+#submitBtn{
+    border: none;
+    border-radius: 5px;
+    padding: 3px 10px 3px 10px;
+}
+#submitBtn:hover{
+    background-color: #ec5707;
+    color: white;
+}
+#searchbar{
+   width: 90%;
+   border: 0.1em solid #ec5707;
+}
+
+/* ΜΕΝΟΥ */
+/* .menu-items{
+    border-left: 0.1em solid #ec5707;
+} */
+.item{
+    width: 90%;
+    height: fit-content;
+    min-height: 130px;
+    text-align: start;
+    background-color: white;
+    color: black;
+    border: 0.01em solid #cce039;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+.itemname, .itemprice{
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+.itemdescr{
+    color: gray;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+/* ΚΑΛΑΘΙ */
+.cart{
+    position: sticky;
+    top: 7px;
+    border: 0.1em solid #cce039;
+}
+.cartname{
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    word-break: normal;
+}
+.cartitem{
+    width: 100%;
+    height: fit-content;
+    background-color: white;
+    color: black;
+    border: 0.01em solid #cce039;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+.continue{
+    display: none;
+    width: 105px;
+}
+.continue:hover{
+    background-color: #ec5707;
+    color: white;
+}
+.cartitemname, .cartitemprice, .numitem{
+    margin-bottom: 0;
+}
+.deleteitembtn{
+    color: #ec5707;
+    font-size: 1.2em;
+    background-color: white;
+    border: none;
+    width: fit-content;
+    margin-top: 8px;
+}
+.deleteitembtn:hover{
+    color: black;
+}
+.counterbtns{
+    display: inline;
+    border: none;
+    background-color: white;
+    color: #ec5707;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+.counterbtns:hover{
+    color: black;
+    cursor: pointer;
+
+}
+
+/* ΠΛΗΡΟΦΟΡΙΕΣ */
+.res_info{
+    border: 0.1px solid #ec5707;
+    border-radius: 5px;
+    width: fit-content;
+    height: fit-content;
+}
+.res_info h4, .res_info h5, .res_info p{
+    margin: 5px;
+}
+
+#storeCat{
+    background-color: white;
+    border: 1px solid #ec5707;
+    border-radius: 10px;
+    font-size: 1.2em;
+}
+#addItem{
+    border: 1px solid #ec5707;
+    border-radius: 5px;
+    width: 80%;
+}
+#addItem p, #addItem input{
+    display: inline;
+    margin-bottom: 3px;
+}
+#addItembtn{
+    border: none;
+    border-radius: 5px;
+    margin-top: 3px;
+}
+#addItembtn:hover{
+    color: white;
+    background-color: #ec5707;
+}
+
+/* ΒΑΘΜΟΛΟΓΙΑ */
+#row2 h5{
+    display: inline;
+    width: fit-content;
+}
+.rating_star {
+    display: inline;
+    font-size: 2em;
+    cursor: pointer;
+    transition: filter linear .3s;
+    user-select: none;
+}
+.rating_star:hover {
+    filter: drop-shadow(1px 1px 4px yellow);
+}
+.notClicked{
+    color: gray;
+}
+.clicked{
+    color: yellow;
+}
+
+/* MODAL_STANDARD*/
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    padding-top: 100px;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-cont{
+    position: relative;
+    width: 50%; 
+    margin: auto;
+    padding: 0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: white;
+    border-radius: 5px;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+  
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.modal-header p{
+    color: gray;
+}
+#closebt{
+    color: #ec5707;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 0 9.5px 0 9.5px;
+    font-size: xx-large;
+    margin-bottom: 10%;
+    display: inline-block;
+}
+#closebt:hover{
+    color: black;
+}
+#comments{
+    resize: none !important;
+}
+#itemcounter{
+    width: 20%;
+    margin-left: 10px;
+}
+#itemcounter span, #itemcounter p{
+    display: inline;
+}
+#itemcounter span{
+    font-size: 1.5em;
+    border: none;
+    border-radius: 5px;
+    border: 3px solid #ec5707;
+}
+.disable-select {
+    user-select: none; 
+   -webkit-user-select: none; 
+   -moz-user-select: none; 
+   -ms-user-select: none; 
+}
+#itemcounter span:hover{
+    color: white;
+    background-color: #ec5707;
+}
+#incrbtn{
+    padding: 0 10px 0 10px;
+}
+#decrbtn{
+    padding: 0 13.3px 0 13.3px;
+}
+#itemcounter p{
+    font-size: 1.2em;
+    padding: 0 8px 0 8px;
+}
+.addtocart{
+    font-size: 1.2em;
+    background-color: #d7d3d3;
+    color: #ec5707;
+    border-radius: 15px;
+    border: none;
+    width: 130px;
+}
+.addtocart:hover{
+    background-color: #ec5707;
+    color: white;
+}
+
+.modalbtn{
+    font-size: 1.2em;
+    background-color: #d7d3d3;
+    color: #ec5707;
+    border-radius: 15px;
+    border: none;
+    width: 20%;
+}
+.modalbtn:hover{
+    background-color: #ec5707;
+    color: white;
+}
+
+
+
+.signout{
+    margin: 20px 10px;
+    background-color: white;
+    border-width: 0;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+.signout:hover {
+    background-color: #6B7D7D;
+    color: white;
+}
+
+
+

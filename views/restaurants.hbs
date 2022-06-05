@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/restaurants.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row top-bar">
+            <div class="col-auto">
+                <a href="/"><img class="logo" src="img/logo.png" alt="logo"></a>
+            </div>
+            <div class="col"></div>
+            <div class="col-auto">
+                {{#if username}}
+                {{!-- <p style="font-size: 2rem; color: white">{{username}}</p> --}}
+                <input type="button" class="signout" value="Αποσύνδεση" onclick="window.location='/signout'">
+                {{else}}
+                <input type="button" class="login" value="Σύνδεση / Εγγραφή" onclick="location.href='/login'">
+                {{/if}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <p>
+                    Βρέθηκαν {{count}} καταστήματα
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto filters-box">
+                <p>Φίλτρα</p>
+                {{#each categories}}
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="cat-{{this.id}}" autocomplete="off">
+                    <label class="form-check-label" for="cat-{{this.id}}">
+                        {{this.name}}
+                    </label>
+                </div>
+                {{/each}}
+                {{!-- <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="souvlakia" autocomplete="off">
+                    <label class="form-check-label" for="souvlakia">
+                        Σουβλάκια
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="pizza" autocomplete="off">
+                    <label class="form-check-label" for="pizza">
+                        Pizza
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="kineziki" autocomplete="off">
+                    <label class="form-check-label" for="kineziki">
+                        Κινέζικη
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="krepes" autocomplete="off">
+                    <label class="form-check-label" for="krepes">
+                        Κρέπες
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="burgers" autocomplete="off">
+                    <label class="form-check-label" for="burgers">
+                        Burgers
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="sushi" autocomplete="off">
+                    <label class="form-check-label" for="sushi">
+                        Sushi
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="glyka" autocomplete="off">
+                    <label class="form-check-label" for="glyka">
+                        Γλυκά
+                    </label>
+                </div> --}}
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <input type="text" class="search" placeholder="Αναζήτησε καταστήματα ή προϊόντα">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Ταξινόμηση
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" id="sort-name">Αλφαβητική</a></li>
+                                <li><a class="dropdown-item" id="sort-delivery-time">Χρόνος Παράδοσης</a></li>
+                                <li><a class="dropdown-item" id="sort-minimum-order">Ελάχιστη Παραγγελία</a></li>
+                                <li><a class="dropdown-item" id="sort-rating">Βαθμολογία</a></li>
+                            </ul>
+                          </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col results-box">
+                        {{#each restaurants}}
+                        <div class="row">
+                            <div class="col result" onclick="location.href='/restaurant?id={{this.rid}}'">
+                                <div class="row">
+                                    <div class="col">
+                                        <p>{{this.rname}}</p>
+                                        <p>{{this.cname}} - {{this.delivery_time}}' - Ελάχιστη {{this.minimum_order}}€</p>
+                                    </div>
+                                    {{#if this.avg_rating}}
+                                    <div class="col-auto">
+                                        <div class="row">
+                                            <div class="col d-flex justify-content-center">
+                                                <p class="rating-star">
+                                                    &#9733;
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col d-flex justify-content-center">
+                                                <p class="rating">{{this.avg_rating}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                        {{!-- <div class="row">
+                            <div class="col result" onclick="location.href='/restaurant'">
+                                <div class="row">
+                                    <div class="col-auto d-flex align-items-center">
+                                        <img src="img/no_image.png" alt="no image">
+                                    </div>
+                                    <div class="col">
+                                        <p>Κατάστημα 2</p>
+                                        <p>Sushi - 40' - Ελάχιστη 25,00€</p>
+                                        </div>
+                                    <div class="col-auto">
+                                        <div class="row">
+                                            <div class="col d-flex justify-content-center">
+                                                <p class="rating-star">
+                                                    &#9733;
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col d-flex justify-content-center">
+                                                <p class="rating">4.7</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col result" onclick="location.href='/restaurant'">
+                                <div class="row">
+                                    <div class="col-auto d-flex align-items-center">
+                                        <img src="img/no_image.png" alt="no image">
+                                    </div>
+                                    <div class="col">
+                                        <p>Κατάστημα 3</p>
+                                        <p>Burgers - 45' - Ελάχιστη 3,90€</p>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="row">
+                                            <div class="col d-flex justify-content-center">
+                                                <p class="rating-star">
+                                                    &#9733;
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col d-flex justify-content-center">
+                                                <p class="rating">3.8</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col result" onclick="location.href='/restaurant'">
+                                <div class="row">
+                                    <div class="col-auto d-flex align-items-center">
+                                        <img src="img/no_image.png" alt="no image">
+                                    </div>
+                                    <div class="col">
+                                        <p>Κατάστημα 4</p>
+                                        <p>Σουβλάκια - 41' - Ελάχιστη 6,00€</p>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="row">
+                                            <div class="col d-flex justify-content-center">
+                                                <p class="rating-star">
+                                                    &#9733;
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col d-flex justify-content-center">
+                                                <p class="rating">2.5</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col result" onclick="location.href='/restaurant'">
+                                <div class="row">
+                                    <div class="col-auto d-flex align-items-center">
+                                        <img src="img/no_image.png" alt="no image">
+                                    </div>
+                                    <div class="col">
+                                        <p>Κατάστημα 5</p>
+                                        <p>Σουβλάκια - 33' - Ελάχιστη 25,00€</p>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="row">
+                                            <div class="col d-flex justify-content-center">
+                                                <p class="rating-star">
+                                                    &#9733;
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col d-flex justify-content-center">
+                                                <p class="rating">4.0</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                       
+                        </div> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/restaurants.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
