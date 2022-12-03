@@ -9,8 +9,6 @@ services:
     plan: free # optional; defaults to starter
     numInstances: 1
     envVars:
-      - key: secret # Imported from Heroku app
-        sunc: false
       - key: DATABASE_URL # Render PostgreSQL database
         fromDatabase:
           name: postgresql-clean-49511
