@@ -7,7 +7,10 @@ services:
     env: docker # valid values: https://render.com/docs/yaml-spec#environment
     dockerfilePath: Dockerfile.render
     plan: free # optional; defaults to starter
+    numInstances: 0
     envVars:
+      - key: secret # Imported from Heroku app
+        sunc: false
       - key: DATABASE_URL # Render PostgreSQL database
         fromDatabase:
           name: postgresql-clean-49511
@@ -16,3 +19,4 @@ services:
 databases: # Render PostgreSQL database
   - name: postgresql-clean-49511
     ipAllowList: [] # only allow internal connections
+    plan: free
