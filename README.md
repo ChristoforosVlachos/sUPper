@@ -1,18 +1,52 @@
 # sUPper
 
-## Προεπισκόπηση της σελίδας - Live
+This is a 1-semester project for the course "Internet Programming". It was carried out in collaboration with [Marina Mentou](https://gr.linkedin.com/in/marina-mentou-748a8b1b8).  
+It showcases full stack webpage development, from the UI/UX design and style sheet creation, to the forming of the relevant databases and their respective interfaces.
 
-Στη διεύθυνση: https://supper.onrender.com/
+## Features
 
-## Προεπισκόπηση της σελίδας - Τοπικά
+- A fully working web application for online food ordering and delivery.
+- User creation and sign-in
+- Sign-up of dedicated drivers.
+- Sign-up of restaurants to the service.
+- Restaurant management (menu, working hours, etc.).
+- Support for reviews by the customers.
+- Broadcasting orders to nearby drivers, ability for drivers to pick their orders.
 
-Εκτέλεση των εντολών:
+## Technologies employed
+
+- HTML
+- CSS
+- JavaScript
+- NodeJS
+- ExpressJS
+- Handlebars
+- PostgreSQL
+
+## Entity – Relationship Diagram (text in greek)
+
+![web](https://github.com/ChristoforosVlachos/sUPper/assets/96950242/1685ce05-b467-454a-af8f-52f676ae90dd)
+
+
+## Screenshot
+
+![web2](https://github.com/ChristoforosVlachos/sUPper/assets/96950242/91a7ba50-116f-460d-a980-e4e1c8603616)
+
+## Try it!
+
+### Live
+
+~~Visit https://supper.onrender.com/~~  
+Due to changes in renders free plan, database functions are no longer working. This option is no longer recommended. Expect frequent crashing and general disfunction.
+
+### Localy
+
+On the base folder, run:
 ```
-npm install
+npm intall
 ```
-και μετά:
+and then:
 ```
 node index.mjs
 ```
-
-Απαραίτητος είναι ο ορισμός των μεταβλητών περιβάλλοντος 'DATABASE_URL' και 'SECRET'.
+Additioanlly, the environment variables "DATABASE_URL" and "SECRET" have to be set.
