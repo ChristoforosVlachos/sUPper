@@ -37,7 +37,7 @@ It showcases full stack webpage development, from the UI/UX design and style she
 ### Live
 
 ~~Visit https://supper.onrender.com/~~  
-Due to changes in renders free plan, database functions are no longer working. This option is no longer recommended. Expect frequent crashing and general disfunction.
+Due to changes in Render's free plan, database functions are no longer working. This option is not recommended anymore. Expect frequent crashing and general disfunction.
 
 ### Localy
 
