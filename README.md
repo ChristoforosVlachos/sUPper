@@ -36,8 +36,8 @@ It showcases full stack webpage development, from the UI/UX design and style she
 
 ### Live
 
-~~Visit https://supper.onrender.com/~~  
-Due to changes in Render's free plan, database functions are no longer working. This option is not recommended anymore. Expect frequent crashing and general disfunction.
+Visit https://supper.onrender.com/  
+May take up to 1 minute to fire up the server the first time. Hosted by [Render](https://render.com/); PostgreSQL database on [aiven](https://aiven.io/).
 
 ### Localy
 
